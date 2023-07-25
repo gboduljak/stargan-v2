@@ -44,6 +44,7 @@ def calculate_metrics(nets, args, step, mode):
                                          batch_size=args.val_batch_size,
                                          imagenet_normalize=False,
                                          drop_last=True)
+            iter_ref = iter(loader_ref)
 
         for src_idx, src_domain in enumerate(src_domains):
             path_src = os.path.join(args.val_img_dir, src_domain)
